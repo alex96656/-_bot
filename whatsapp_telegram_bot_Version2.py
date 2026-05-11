@@ -11,8 +11,8 @@ from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandl
 import asyncio
 
 # ==================== CONFIGURATION ====================
-BOT_OWNER_NAME = "Alex"
-BOT_OWNER_ID = 123456789  # Replace with actual owner ID
+BOT_OWNER_NAME = "ᴹᴿ•ᴀʟᴇ᥊"
+BOT_OWNER_ID = 8705922736   # Replace with actual owner ID
 BOT_VERSION = "1.0.0"
 BOT_NAME = "WhatsApp Pairing Bot"
 TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"  # Replace with your token
