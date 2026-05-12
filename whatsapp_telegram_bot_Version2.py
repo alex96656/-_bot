@@ -1,4 +1,5 @@
 import logging
+import os
 import qrcode
 import time
 from io import BytesIO
@@ -17,7 +18,7 @@ BOT_OWNER_NAME = "ᴹᴿ•ᴀʟᴇ᥊"
 BOT_OWNER_ID = 8705922736   # Replace with actual owner ID
 BOT_VERSION = "1.0.0"
 BOT_NAME = "ᴹᴿ•ᴀʟᴇ᥊-MD"
-TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"  # Replace with your token
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")  "  # Replace with your token
 # ======================================================
 
 # Enable logging
