@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+
+  <h1>Bot Admin Dashboard</h1>
+
+  <h3 id="status">Loading...</h3>
+
+  <button onclick="restart()">Restart Bot (placeholder)</button>
+
+  <br><br>
+
+  <textarea id="msg" placeholder="Broadcast message"></textarea><br>
+  <button onclick="send()">Send Broadcast</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script>
+    const socket = io();
+
+    socket.on("broadcast", (msg) => {
+      alert("📢 " + msg);
+    });
+
+    async function loadStatus() {
+      const res = await fetch("/status");
+      const data = await res.json();
+      document.getElementById("status").innerText = "Status: " + data.status;
+    }
+
+    function restart() {
+      alert("You can connect this to bot restart logic later");
+    }
+
+    async function send() {
+      const message = document.getElementById("msg").value;
+
+      await fetch("/broadcast", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({ message })
+      });
+
+      alert("Sent!");
+    }
+
+    loadStatus();
+  </script>
+
+</body>
+</html>
