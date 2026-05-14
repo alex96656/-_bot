@@ -1,6 +1,7 @@
-selenium>=4.10.0
-python-telegram-bot>=20.0
-qrcode[pil]>=7.4.0
-Pillow>=9.0.0
-webdriver-manager>=3.9.0
+python-telegram-bot
+requests
+qrcode
 flask
+selenium
+webdriver-manager
+chromium
