@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body>
+  <h2>Bot Admin Login</h2>
+
+  <input id="u" placeholder="Username"><br><br>
+  <input id="p" type="password" placeholder="Password"><br><br>
+
+  <button onclick="login()">Login</button>
+
+  <script>
+    async function login() {
+      const res = await fetch("/login", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+          username: document.getElementById("u").value,
+          password: document.getElementById("p").value
+        })
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        window.location.href = "/dashboard";
+      } else {
+        alert("Wrong login");
+      }
+    }
+  </script>
+</body>
+</html>
