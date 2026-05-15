@@ -1,6 +1,5 @@
 import logging
 import os
-import qrcode
 import time
 from io import BytesIO
 from selenium import webdriver
